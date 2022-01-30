@@ -1,7 +1,7 @@
 const http = require("http");
 const url = require("url");
 const greet = require("./greet");
-const greeting = greet(name);
+const greeting = greet;
 
 const server = http.createServer((req, res) => {
     const { name } = url.parse(req.url, true).query;
@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "text/plain");
     res.setHeader("Access-Control-Allow-Origin", "*");
     //res.end(greet(name));
-    res.end(greeting(name));
+    res.end(greeting);
 });
 
 const port = 3000;
