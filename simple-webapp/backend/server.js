@@ -1,6 +1,6 @@
 const http = require("http");
 const url = require("url");
-//const greet = require("./greet");
+const greet = require("./greet");
 const greeting = greet(name);
 
 const server = http.createServer((req, res) => {
